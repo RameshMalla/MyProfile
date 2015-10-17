@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ramesh</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(e) {
+        $(".overlay").hide();
+		$(".webStyle").hover(function(e){
+			$(".overlays").addClass("addImage");
+			$(".overlays").addClass("animated bounceIn");
+
+		$(".overlays").animate({
+                opacity: '1'
+            });
+		});
+		
+    });
+    </script>
+<style type="text/css">
+.overlay {
+	background-image:url(../public/images/ryYLZ.png);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+.customRow {
+	font-family: cursive;
+	font-size: x-large;
+	/* font-weight: bold; */
+}
+
+.suubContentOne, .suubContentTwo, .suubContentOneTwo {
+	position: relative;
+	height: 200px;
+}
+
+.suubContentOne {
+	background-image: url(../public/images/web-design1.jpg);
+	background-repeat: no-repeat;
+	background-size: 311px 172px;
+	margin-left: 270px;
+}
+
+.suubContentOneTwo {
+	background-image: url(../public/images/webOne.jpg);
+	background-repeat: no-repeat;
+	background-size: 311px 172px;
+	margin-left: 270px;
+}
+
+.suubContentOneTwoS {
+	background-image: url(../public/images/design-graphic.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	/*background-position-x: 296px;*/
+}
+
+.suubContentOneS {
+	background-image: url(../public/images/web_design.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	/*background-position-x: 296px;*/
+}
+
+.suubContentThreeS {
+	background-image: url(../public/images/guitar.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	/*background-position-x: 296px;*/
+}
+
+.suubContentTwo {
+	
+}
+
+.firstColumn, .secondColumn {
+	height: 400px;
+}
+.overlays{
+    position: fixed;
+    width: 174px;
+    height: 100%;
+    background-size: cover;
+    background-position-x: 199px;
+	opacity:0;
+}
+.addImage{
+	   background-image: url(../public/images/ryYLZ.png);
+}
+
+.customFooter{
+    background-image: url(../public/images/FooterBackground.jpg);
+    height: 600px;
+    background-attachment: fixed;
+    background-color: darkgray;
+    background-repeat: no-repeat;
+    z-index: -2;
+    background-size: cover;
+
+}
+.footer{
+    position: fixed;
+}
+.customFooter div{
+    position: fixed;
+    z-index: -1;
+    bottom: 80px;
+    color: red;
+}
+.entireDiv{
+    background-image: url(../public/images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+}
+</style>
+</head>
+<body>
+<div class="entireDiv">
+<div class="overlays"></div>
+
+	<header>
+		<div class="jumbotron" style="background-color: cornsilk">
+			<h1>My Image</h1>
+		</div>
+	</header>
+	<div class="row customRow webStyle">
+		<div class="col-lg-6 firstColumn suubContentOneS">
+			<!--<div class="suubContentOne img-responsive"></div>-->
+		</div>
+		<div class="col-lg-6 secondColumn">
+			<!--<div class="suubContentTwo">-->Lorem ipsum dolor sit amet,
+				consectetuer adipiscing elit, sed diam nonummy nibh euismod
+				tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+				enim ad minim veniam, quis nostrud exerci tation ullamcorper
+				suscipit lobortis nisl ut aliquip ex ea commodo consequat.Lorem
+				ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+				nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+				volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+				ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+				consequat.<!--</div>-->
+		</div>
+	</div>
+
+	<div class="row customRow">
+
+		<div class="col-lg-6 col-lg-push-6 secondColumn suubContentOneTwoS">
+		</div>
+		<div class="col-lg-6 col-lg-pull-6 firstColumn">
+			<!--<div class="suubContentTwo">-->Lorem ipsum dolor sit amet,
+				consectetuer adipiscing elit, sed diam nonummy nibh euismod
+				tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+				enim ad minim veniam, quis nostrud exerci tation ullamcorper
+				suscipit lobortis nisl ut aliquip ex ea commodo consequat.Lorem
+				ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+				nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+				volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+				ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+				consequat.<!--</div>-->
+		</div>
+	</div>
+
+	<div class="row customRow">
+		<div class="col-lg-6 firstColumn suubContentThreeS">
+			<!--<div class="suubContentOne img-responsive"></div>-->
+		</div>
+		<div class="col-lg-6 secondColumn">
+			<!--<div class="suubContentTwo">-->Lorem ipsum dolor sit amet,
+				consectetuer adipiscing elit, sed diam nonummy nibh euismod
+				tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+				enim ad minim veniam, quis nostrud exerci tation ullamcorper
+				suscipit lobortis nisl ut aliquip ex ea commodo consequat.Lorem
+				ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+				nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+				volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+				ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+				consequat.<!--</div>-->
+		</div>
+	</div>
+</div>
+<footer>
+<div class="col-lg-12 customFooter">
+
+    <div class="container">
+        <h2>Image</h2>
+        <p>The .img-responsive class makes the image scale nicely to the parent element (resize the browser window to see the effect):</p>
+        <img src="../public/images/batimage.jpg" class="img-responsive img-circle" alt="Cinque Terre" width="304" height="236">
+    </div>
+
+	</div>
+</footer>
+</body>
+</html>

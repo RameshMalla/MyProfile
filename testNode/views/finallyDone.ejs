@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+   $(document).ready(function(e) {
+	  $('.one').addClass("animated zoomIn");
+	  $('.two').addClass("animated zoomIn");
+	  $('.three').addClass("animated zoomIn");
+	  $('.four').addClass("animated zoomIn");
+	  $('.customIcon').addClass("animated zoomIn");
+   
+$('.customIcon').click(function(e){
+
+$(this).css('background-color','yellow');
+e.preventtDefault;
+$('.one').children('img').animate({
+    borderSpacing: -0
+  }, {
+  step: function(now,fx) {
+      $('.one').children('img').css('-webkit-transform','rotate(360deg)'); 
+      $('.one').children('img').css('-moz-transform','rotate(360deg)');
+      $('.one').children('img').css('transform','rotate(360deg)');
+	  
+	  $('.two').children('img').css('-webkit-transform','rotate(360deg)'); 
+      $('.two').children('img').css('-moz-transform','rotate(360deg)');
+      $('.two').children('img').css('transform','rotate(360deg)');
+  
+$('.three').children('img').css('-webkit-transform','rotate(-360deg)'); 
+      $('.three').children('img').css('-moz-transform','rotate(-360deg)');
+      $('.three').children('img').css('transform','rotate(-360deg)');
+
+      $('.four').children('img').css('-webkit-transform','rotate(-720deg)'); 
+      $('.four').children('img').css('-moz-transform','rotate(-720deg)');
+      $('.four').children('img').css('transform','rotate(-720deg)');
+	  
+    },
+    duration: 2000,
+    complete: function() {
+	setTimeout(function(){
+  //$('.one').addClass("animated zoomOutUp");
+	//  $('.two').addClass("animated zoomOutUp");
+	  //$('.three').addClass("animated zoomOutUp");
+	  //$('.four').addClass("animated zoomOutUp");
+	  //$('.customIcon').addClass("animated zoomOutUp");
+$('.one').addClass("animated zoomOutUp").promise().done(function(){
+
+setTimeout(function(){$('.two').addClass("animated zoomOutUp").promise().done(function(){
+setTimeout(function(){$('.three').addClass("animated zoomOutUp").promise().done(function(){
+setTimeout(function(){$('.four').addClass("animated zoomOutUp").promise().done(function(){
+setTimeout(function(){$('.customIcon').addClass("animated zoomOutUp")
+},1000)
+})},400)
+});},400)
+});},400)	  
+}, 2000);
+});
+
+setTimeout(function(){
+$('.scaler').remove().promise().done(function(){
+$('.logoline').append("<img src=\"/images/myLogoLine.svg\" class=\"img-responsive\"/>");
+});
+},3500)
+setTimeout(function(){
+$('.logoline').children('img').addClass("animated bounceOut");
+$('.realLogo').css('opacity','1');
+},8400)
+//setTimeout(function(){
+//$('.myLogo').empty();
+//$('.myLogo').append("<img src=\"myLogo1.png\" class=\"img-responsive\" />");
+//},16000)
+
+	//$('.one').hide();
+	  //$('.two').hide();
+	  //$('.three').hide();
+	  //$('.four').hide();
+    }
+  });
+});
+
+   });
+  </script>
+<style>
+.one > img {
+  
+       transform: rotate(90deg);
+	   transition:transform 2s;
+  
+}
+
+.two > img {
+  
+       transform: rotate(180deg);
+	   transition:transform 2s;
+  
+}
+
+.three > img {
+  
+       transform: rotate(-90deg);
+	   transition:transform 2s;
+  
+}
+
+.four > img {
+  
+       transform: rotate(0deg);
+     transition:transform 2s;
+  
+}
+.one > img , .two > img  , .three > img  , .four > img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.one{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+}
+.two{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+}
+.three{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.four{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+.five{
+       width: 791px;
+    height: 789px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+.customIcon{
+font-size: 76px;
+        width: 95px;
+    height: 96px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    line-height: 1.22;
+    border-style: solid;
+    border-radius: 137px;
+    z-index: 3;
+    background-color: dodgerblue;
+}
+.myLogo{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.myLogos{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+	margin-left: 72px;
+    margin-top: 110px;
+}
+
+.logos{
+  background-image: url("myLogo1.png");
+    background-position-x: 75px;
+    background-position-y: 112px;
+    background-size: 593px;
+    background-repeat: no-repeat;
+}
+.scaler{
+
+}
+.myLogosss{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.myLogosss > img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.logoline{
+    z-index: 1;
+}
+.realLogo{
+opacity:0;
+}
+.realLogo > img{
+    left: 0.6%;
+}
+</style>
+</head>
+<body>
+ 
+<div class="scaler container"> 
+<div class="one"><img src="/images/samp4.png" class="img-responsive" /></div>
+<div class="two"><img src="/images/samp4.png" class="img-responsive" /></div>.
+<div class="three"><img src="/images/samp4.png" class="img-responsive" /></div>
+<div class="four"><img src="/images/samp4.png" class="img-responsive" /></div>
+<span class=" customIcon glyphicon glyphicon-off" aria-hidden="true"></span>
+ </div>
+ <div class="myLogosss logoline"></div>
+
+<div class="myLogosss realLogo"><img src="/images/myLogo2.png" class="img-responsive"/></div>
+ <!-- <div class="five"><img src="samp.png" class="img-responsive" /></div>-->
+ 
+ 
+ 
+</body>
+</html>
