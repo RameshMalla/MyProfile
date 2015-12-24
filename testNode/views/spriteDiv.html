@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+.overlay {
+	background-image: url(../public/images/main.jpg);
+	background-color: black;
+	/* position: absolute; */
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	height: 100%;
+	width: 100%;
+	height: 100%;
+	/* position: fixed; */
+	background-position: 50%;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+.common{
+	height: 100%;
+	background-image: url(../public/images/main.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+.one , .two , .three , .four{
+width: 25%;
+float: left;
+}
+.one{
+background-color: black;
+    background-position: -16% 0%;
+}
+.two{
+background-color: gray;
+        background-position: 24% 0%;
+}
+.three{
+background-color: olive;
+        background-position: 64% 0%;
+
+}
+.four{
+background-color: teal;
+    background-position: 104% 0%;
+
+}
+</style>
+<body>
+<div class="one common"></div>
+<div class="two common"></div>
+<div class="three common"></div>
+<div class="four common"></div>
+</body>
+</html>

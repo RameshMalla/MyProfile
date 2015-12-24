@@ -7,14 +7,25 @@
 <style type="text/css">
 	
 	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:none;}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#E8A423;stroke-miterlimit:10;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#1D1D19;stroke-miterlimit:10;}
 	    .st0 ,.st1 {
-  stroke-dasharray: 370;
+  
+}
+#Layer_1:hover .st0{
+stroke:#E8A423;
+stroke-dasharray: 370;
   stroke-dashoffset: 370;
   animation: dash 2s linear  forwards;
   -webkit-animation: dash 2s linear  forwards;
 }
 
+#Layer_1:hover .st1{
+stroke:#E8A423;
+stroke-dasharray: 370;
+  stroke-dashoffset: 370;
+  animation: dash 2s linear  forwards;
+  -webkit-animation: dash 2s linear  forwards;
+}
 @keyframes dash {
   from {
     stroke-dashoffset: 370;

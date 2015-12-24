@@ -5,13 +5,97 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.appear/0.3.3/jquery.appear.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script>
+
+
+
+/*window.onload=function() {
+	// Get the Object by ID
+	var a = document.getElementById("codeDesignId");
+	// Get the SVG document inside the Object tag
+	var svgDoc = a.contentDocument;
+	console.log(svgDoc);
+	// Get one of the SVG items by ID;
+	//var svgItem = svgDoc.getElementById("svgItem");
+	// Set the colour to something else
+	//svgItem.setAttribute("fill", "lime");
+};*/
+
+
+$(document).ready(function() {
+
+$('.aboutContainer').css('visibility', 'hidden')
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0); 
+});
+
+
+var animateTheDiv ={
+addTheclass: function(child){
+$(child).addClass("animated bounce");
+},
+removeTheClass: function(child){
+$(child).removeClass("animated bounce");
+}
+}
+
+var animObject = Object.create(animateTheDiv);
+
+$(".rowComp , .rowCompTwo , .rowCompThree , .rowCompFour,.rowCompFive").hover(function(e) {
+		animObject.addTheclass($(this).children());
+	}, function(e) {
+	    animObject.removeTheClass($(this).children());
+});
+
+//aboutContainer
+
+var eTop = $('.aboutContainer').offset().top; //get the offset top of the element
+ 
+ 
+  var pos = Math.ceil((eTop - $(window).scrollTop()));
+
+
+function isScrolledIntoView(elem)
+{
+    var $elem = $(elem);
+    var $window = $(window);
+
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+
+    var elemTop = $elem.offset().top;
+    var elemBottom = (elemTop + $elem.height());
+    
+    //console.log((elemBottom-elemTop)/1.5);
+    elemBottom=elemTop+((elemBottom-elemTop)/1.5)
+console.log(elemTop);
+console.log(elemBottom);
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+  $(window).scroll(function() { 
+  
+  if(isScrolledIntoView('.aboutContainer')){
+  $('.aboutContainer').css('visibility', 'visible')
+  $('.aboutContainer').addClass("animated fadeInUp");
+  
+  
+  }
+  
+  });
+
+
+})
+</script>
 <style>
 html, body {
 	height: 100%;
@@ -20,7 +104,7 @@ html, body {
 }
 
 .imageContainer {
-	background-image: url(../public/images/mainBg.jpg);
+	/* background-image: url(../public/images/fiy.jpg); */
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	height: 600px;
@@ -28,21 +112,21 @@ html, body {
 	/* margin: auto; */
 	margin-left: 1%;
 	margin-right: 1%;
-	border-style: solid;
-	border-radius: 13px;
-	border-color: white;
+	/* border-style: solid; */
+	/* border-radius: 13px; */
+	/* border-color: white; */
 	height: 600px;
 }
 
 .mainContents {
 	margin-left: 11%;
 	margin-right: 11%;
-	font-family: cursive;
+	font-family: serif;
 	font-style: italic;
 }
 
-.mainContents>.firstRow, .mainContents>.secondRow, .mainContents>.thirdRow
-	{
+.mainContents>.firstRow, .mainContents>.secondRow, .mainContents>.thirdRow,
+	.mainContents>.fourthRow, .mainContents>.fourthRowOne {
 	margin-top: 3%;
 	text-align: center;
 	border-bottom: 2px solid burlywood;
@@ -52,6 +136,7 @@ html, body {
 	max-width: 68em;
 	margin-left: auto;
 	margin-right: auto;
+	padding-bottom: 50px;
 }
 
 .helloHeading {
@@ -72,39 +157,216 @@ html, body {
 .bioFirstRow {
 	border-bottom: 1px solid grey;
 	/* border-spacing: 2px; */
-	padding-bottom: 13px;
+	padding-bottom: 66px;
 }
 
 .bioSecondRow {
-	padding-top: 15px;
-	padding-bottom: 26px;
+	padding-top: 53px;
+	padding-bottom: 44px;
+}
+
+.rowComp, .rowCompTwo, .rowCompThree, .rowCompFour {
+	padding: 26px 51px;
+}
+
+.rowCompTwo, .rowCompFour {
+	
+}
+
+.skillSubList:nth-child(odd) {
+	background-color: #1D1D19;
+	color: white;
+}
+
+.skilldescription {
+	width: 48%;
+	margin: auto;
+	font-variant: small-caps;
+}
+
+@media only screen and (max-width: 800px) {
+	.skilldescription {
+		width: 100%;
+	}
+}
+
+.helloContents {
+	font-size: large;
+	padding-top: 12px;
+}
+
+.overlay {
+	background-image: url(../public/images/main.jpg);
+	background-color: black;
+	/* position: absolute; */
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	height: 100%;
+	width: 100%;
+	height: 100%;
+	/* position: fixed; */
+	background-position: 50%;
+}
+
+.one {
+	background-image: url(../public/images/contactIcons.png);
+	background-repeat: no-repeat;
+	height: 32px;
+	width: 33px;
+	display: inline-block;
+	margin: auto;
+}
+
+.imgOne {
+	background-position: -55px -54px;
+}
+
+.imgTwo {
+	background-position: -169px -55px;
+}
+
+.imgThree {
+	background-position: -226px -55px;
+}
+
+.imgFour {
+	background-position: -284px -54px;
+}
+
+.imgFive {
+	background-position: -340px -54px;
+}
+
+.imgSix {
+	background-position: -398px -54px;
+}
+
+.imgOne:hover {
+	background-position: -55px -129px;
+}
+
+.imgTwo:hover {
+	background-position: -169px -129px;
+}
+
+.imgThree:hover {
+	background-position: -226px -129px;
+}
+
+.imgFour:hover {
+	background-position: -284px -129px;
+}
+
+.imgFive:hover {
+	background-position: -340px -129px;
+}
+
+.imgSix:hover {
+	background-position: -398px -129px;
+}
+
+.padder {
+	display: inline-block;
+	margin: auto;
+}
+
+.contactContainer {
+	margin-left: -49px;
+}
+
+.skillSubList {
+	border: none;
+}
+
+.emailHead {
+	border: 1px solid;
+	border-radius: 24px;
+	display: inline-block;
+	padding: 14px;
+	background-color: black;
+	color: burlywood;
+}
+
+@media only screen and (max-width: 460px) {
+	.emailHead {
+		width: 100%;
+		font-size: large;
+	}
+}
+
+.firstHead {
+	font-family: monospace;
+	font-size: 103px;
+}
+
+.secondHead {
+	
+}
+
+@media only screen and (max-width: 1200px) {
+	.firstHead {
+		font-size: 58px;
+	}
+}
+
+@media only screen and (max-width: 674px) {
+	.firstHead {
+		font-size: 42px;
+	}
+}
+
+@media only screen and (max-width: 493px) {
+	.firstHead {
+		font-size: 30px;
+	}
+	.secondHead {
+		font-size: 22px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	.firstHead {
+		font-size: 24px;
+	}
+	.secondHead {
+		font-size: 18px;
+	}
 }
 </style>
 </head>
 <body>
-	<header>
-		<div class="jumbotron imageContainer">
-			<div class="container" style="text-align: center">
-				<h1 style="color: #CCC">I'am Ramesh Malla</h1>
+	<div class="overlay">
+		<header>
+			<!-- <div class="jumbotron imageContainer"> -->
+			<div class="container animated zoomIn" style="text-align: center">
+				<h1 class="firstHead" style="color: #CCC;">HELLO &nbsp; I'M
+					&nbsp; RAMESH</h1>
+				<h1 class="secondHead" style="color: #CCC; font-family: sans-serif;">web
+					DEV &nbsp; | &nbsp; Design</h1>
 			</div>
-		</div>
-	</header>
+			<!-- </div> -->
+		</header>
+	</div>
 	<div class="mainContents">
 		<div class="row firstRow">
 			<div class="conatiner aboutContainer">
 				<div class="helloHeading">
 					<h1>
-						<u>Hello and Hi</u>
+						<u>Hey there</u>
 					</h1>
 				</div>
-				<div>
+				<div class="helloContents">
 					<p>
-						My name is <u><b>Ramesh Mallla</b></u>. Iam a 23 year old web
-						enthusuiast from India. I develop web applications from ground up
-						and help others in doing the same. I do both front end and back
-						end development with keen eye on modern designs and procedures. I
+						Iam <u><b>Ramesh Mallla</b></u>. Iam a 23 year old web enthusiast
+						from India. I develop web applications from ground up and help
+						others in doing the same. I do both front end and back end
+						development with keen eye on modern designs and procedures. I
 						always look forward to make and change things from the usual and
-						cram for new tecchnologies and solutions.
+						cram for new technologies and solutions.
 					</p>
 				</div>
 			</div>
@@ -117,9 +379,10 @@ html, body {
 					</h1>
 				</div>
 				<div class="row bioFirstRow">
-					<div class="col-md-6">
+					<div class="col-md-6 rowComp">
 						<div class="row imageRow">
-							<object>
+							<object data="../public/images/codeDesign.svg"
+								type="image/svg+xml" id="codeDesignId">
 								<embed src="../public/images/codeDesign.svg">
 							</object>
 						</div>
@@ -131,7 +394,7 @@ html, body {
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 rowCompTwo">
 						<div class="row imageRow">
 							<!--<img src="../public/images/codeDesign.png" class="img-responsive" />-->
 							<object>
@@ -146,7 +409,7 @@ html, body {
 					</div>
 				</div>
 				<div class="row bioSecondRow">
-					<div class="col-md-6">
+					<div class="col-md-6 rowCompThree">
 						<div class="row imageRow">
 							<object>
 								<embed src="../public/images/openSource.svg">
@@ -154,12 +417,12 @@ html, body {
 						</div>
 						<div class="row">
 							<div class="description">I like opensource and everything
-								about it.I keep following constantly about the new ideas and
+								about it.I keep a consistent follow up about the new ideas and
 								improvements that it had and will bring to software engineering.
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 rowCompFour">
 						<div class="row imageRow">
 							<!--<img src="../public/images/codeDesign.png" class="img-responsive" />-->
 							<object>
@@ -167,9 +430,9 @@ html, body {
 							</object>
 						</div>
 						<div class="row">
-							<div class="description">Besides programming, I would
-								always like to keep my self fit , read books, watch movies(lots
-								of it), passion for cricket and anything that interests me.</div>
+							<div class="description">Besides coding, I would always
+								like to keep my self fit , read books, watch movies(lots of it),
+								passion for cricket and anything that interests me.</div>
 						</div>
 					</div>
 				</div>
@@ -178,35 +441,105 @@ html, body {
 		<div class="row thirdRow">
 			<div class="conatiner aboutContainer">
 				<div class="helloHeading">
-					<h1>WHAT &nbsp; I &nbsp; DO</h1>
+					<h1>Skills</h1>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="row imageRow">
 						<object>
-							<embed src="../public/images/codeDesign.svg">
+							<embed src="../public/images/skill.svg">
 						</object>
 					</div>
 					<div class="row">
-						<div class="description">
-							I develop web applications and web services using <b>Express</b>,
-							<b>Angular</b> , <b>Spring</b> and other JEE frameworks. I like
-							experimenting with new frameworks and technologies.
+						<div class="description skilldescription">
+							<ul class="list-group skillList">
+								<li class="list-group-item skillSubList">Java</li>
+								<li class="list-group-item skillSubList">Spring</li>
+								<li class="list-group-item skillSubList">AngularJS</li>
+								<li class="list-group-item skillSubList">NodeJS</li>
+								<li class="list-group-item skillSubList">HTML + EJS</li>
+								<li class="list-group-item skillSubList">CSS + Less</li>
+								<li class="list-group-item skillSubList">JavaScript</li>
+								<li class="list-group-item skillSubList">Hibernate</li>
+								<li class="list-group-item skillSubList">SQL + PL/SQL</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="row imageRow">
-						<!--<img src="../public/images/codeDesign.png" class="img-responsive" />-->
-						<object>
-							<embed src="../public/images/design.svg">
-						</object>
-					</div>
-					<div class="row">
-						<div class="description">I also fancy designing using
-							photoshop,illustrator and other design tool that I find
-							interesting.</div>
+			</div>
+		</div>
+		<div class="row fourthRowOne">
+			<div class="helloHeading">
+				<h1>Contact</h1>
+			</div>
+			<div class="col-md-12 rowCompFive">
+				<div class="row imageRow">
+					<object>
+						<embed src="../public/images/contacts.svg">
+					</object>
+				</div>
+				<div class="row">
+					<div class="description">
+						If you have an interesting project or just wanna say "Hi", please
+						feel free to drop a line.<br>
+						<h1>@</h1>
+						<br>
+						<h2 class="emailHead">ramesh.malla6@gmail.com</h2>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="row fourthRow">
+			<div class="container">
+				<div class="col-xs-12">
+					<!-- 					<div class="container contactContainer">
+ -->
+					<div class="padder col-xs-2">
+						<div style="cursor: pointer;" class="one imgOne"
+							data-toggle="tooltip" data-placement="left"
+							title="ramesh.malla6@gmail.com"></div>
+					</div>
+					<div class="padder col-xs-2">
+						<a href="https://plus.google.com/+rameshmallarain"><div
+								class="one imgTwo" data-toggle="
+							tooltip"
+								data-placement="left"
+								title="https://plus.google.com/+rameshmallarain"></div></a>
+					</div>
+					<div class="padder col-xs-2">
+						<a href="https://www.facebook.com/Ramesh978904"><div
+								class="one imgThree" data-toggle="
+							tooltip"
+								data-placement="left"
+								title="https://www.facebook.com/Ramesh978904"></div></a>
+					</div>
+					<div class="padder col-xs-2">
+						<div style="cursor: pointer;" class="one imgFour"
+							data-toggle="
+							tooltip" data-placement="left"
+							title="ramesh.malla6@gmail.com"></div>
+					</div>
+					<div class="padder col-xs-2">
+						<a href="https://twitter.com/Rameshrider"><div
+								class="one imgFive" data-toggle="
+							tooltip"
+								data-placement="left" title="https://twitter.com/Rameshrider"></div></a>
+					</div>
+					<div class="padder col-xs-2">
+						<a
+							href="https://www.linkedin.com/profile/view?id=AAMAABVaYccBZvgFa0d6VFKElp-heVlh1uNSLbA&trk=hp-identity-name"><div
+								class="one imgSix" data-toggle="
+							tooltip"
+								data-placement="left"
+								title="https://www.linkedin.com/profile/view?id=AAMAABVaYccBZvgFa0d6VFKElp-heVlh1uNSLbA&trk=hp-identity-name"></div></a>
+					</div>
+					<!-- 					</div>
+ -->
+				</div>
+				<!-- <div class="col-xs-2 well"></div>
+		<div class="col-xs-2 well"></div>
+		<div class="col-xs-2 well"></div>
+		<div class="col-xs-2 well"></div>
+		<div class="col-xs-2 well"></div> -->
 			</div>
 		</div>
 	</div>

@@ -5,9 +5,19 @@
 	 width="60px" height="80px" viewBox="0 0 60 80" style="enable-background:new 0 0 60 80;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:none;}
-	.st1{fill:none;stroke:#E9B800;stroke-width:2;stroke-miterlimit:10;}
-.st0 ,.st1 {
-  stroke-dasharray: 370;
+	.st1{fill:none;stroke:#1D1D19;stroke-width:2;stroke-miterlimit:10;}
+	
+#Layer_1:hover .st0{
+stroke:#E8A423;
+stroke-dasharray: 370;
+  stroke-dashoffset: 370;
+  animation: dash 2s linear  forwards;
+  -webkit-animation: dash 2s linear  forwards;
+}
+
+#Layer_1:hover .st1{
+stroke:#E8A423;
+stroke-dasharray: 370;
   stroke-dashoffset: 370;
   animation: dash 2s linear  forwards;
   -webkit-animation: dash 2s linear  forwards;
@@ -24,7 +34,7 @@
 
 @-webkit-keyframes dash {
   from {
-    stroke-dashoffset: 1200;
+    stroke-dashoffset: 370;
   }
   to {
     stroke-dashoffset: 0;

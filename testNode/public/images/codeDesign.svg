@@ -5,11 +5,14 @@
 	 width="60px" height="80px" viewBox="0 0 60 80" style="enable-background:new 0 0 60 80;"
 	 xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#E8A423;stroke-miterlimit:10;}
-		        .st0 {
-  stroke-dasharray: 370;
+	.st0{fill:none;stroke:#1D1D19;stroke-miterlimit:10;}
+		        
+
+#Layer_1:hover .st0{
+stroke-dasharray: 370;
   stroke-dashoffset: 370;
-  animation: dash 3s linear  forwards;
+stroke:#E8A423;
+animation: dash 3s linear  forwards;
   -webkit-animation: dash 3s linear  forwards;
 }
 
